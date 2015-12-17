@@ -59,7 +59,7 @@ function createResponsePayload(requestBody) {
 
     var target = splitted[0];
     var remainingText = splitted.slice(1).join(' ');
-    remainingText = 'Someone said "' + remainingText + '"';
+    remainingText = 'Birisi diyor ki "' + remainingText + '"';
 
     if (target === ':here') {
         return {
@@ -86,9 +86,9 @@ app.post('/', function(req, response) {
         method: 'POST'
     }, function (error) {
         if(error) {
-            response.end('Unable to post your anonymous message: ' + JSON.stringify(error));
+            response.end('Anonim mesajınızı iletemedik: ' + JSON.stringify(error));
         } else {
-            response.end('Delivered! :cop:');
+            response.end('Gönderildi! :cop:');
         }
 
     });
